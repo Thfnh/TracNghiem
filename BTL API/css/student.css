@@ -1,0 +1,99 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+}
+
+/* Tiêu đề */
+h2 {
+    text-align: center;
+    margin: 25px 0;
+    color: #2c3e50;
+}
+
+/* Container */
+#exams,
+#questions {
+    max-width: 720px;
+    margin: auto;
+    padding: 0 10px;
+}
+
+/* Card */
+.question,
+#exams div {
+    background: #ffffff;
+    padding: 16px 18px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    transition: 0.2s;
+}
+
+/* Hover nhẹ */
+#exams div:hover {
+    transform: translateY(-2px);
+    border-color: #007bff;
+}
+
+/* Nút */
+button {
+    padding: 9px 16px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Câu hỏi */
+.question p {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Đáp án */
+.question label {
+    display: block;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Hover đáp án */
+.question label:hover {
+    background: #f1f7ff;
+}
+
+/* Khi chọn */
+.question input[type="radio"]:checked+span {
+    color: #007bff;
+    font-weight: 500;
+}
+
+/* Radio spacing */
+.question input[type="radio"] {
+    margin-right: 8px;
+}
+
+/* Kết quả */
+#result {
+    text-align: center;
+    margin: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+}

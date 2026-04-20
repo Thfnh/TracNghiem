@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EDUSO - Quản lý</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/gradebook.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="images/gtvt.png" alt="logo">
+                <h2>EDUSO</h2>
+            </div>
+
+            <ul>
+                <li onclick="goHome()">🏠 Trang chủ</li>
+                <li onclick="goManage()">📁 Quản lý</li>
+                <li onclick="goSchedule()">📅 Lịch dạy</li>
+                <li onclick="goGradeScore()">📝 Bảng điểm</li>
+                <li onclick="goNews()">📰 Tin tức</li>
+                <li onclick="goGuide()">❓ Hướng dẫn</li>
+                <li onclick="goLogin()"> Đăng xuất</li>
+            </ul>
+        </aside>
+
+        <div class="main-content">
+
+            <h2>Bảng điểm sinh viên</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Họ tên</th>
+                        <th>Mã SV</th>
+                        <th>Kỳ thi</th>
+                        <th>Điểm</th>
+                        <th>Tổng</th>
+                        <th>Ngày</th>
+                    </tr>
+                </thead>
+
+                <tbody id="gradeTable"></tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/gradebook.js"></script>
+
+</body>
+
+</html>

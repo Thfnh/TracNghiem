@@ -1,0 +1,277 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f1f5f9;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    display: flex;
+    min-height: 100vh;
+    /* ✅ fix lỗi scroll */
+}
+
+/* ===== SIDEBAR (GIỮ NGUYÊN) ===== */
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+.sidebar li {
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.sidebar li:hover {
+    background: #e2e8f0;
+}
+
+.sidebar .active {
+    background: #fee2e2;
+    color: red;
+    font-weight: bold;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 150px;
+}
+
+/* ===== MAIN (ĐÃ FIX) ===== */
+.main {
+    flex: 1;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* ⭐ căn giữa ngang */
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+.top-bar input {
+    flex: 1;
+    /* ✅ không bị lệch */
+}
+
+.top-bar input,
+.top-bar select {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+    background: white;
+}
+
+.top-bar input:focus,
+.top-bar select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+/* ===== SLIDER ===== */
+.slider {
+    width: 100%;
+    /* ✅ full ngang */
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+    width: 100%;
+    padding: 20px;
+    color: white;
+}
+
+.overlay h2 {
+    font-size: 20px;
+}
+
+/* ===== GRID ===== */
+.news-grid {
+    width: 100%;
+    /* ✅ fix co layout */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* ===== CARD ===== */
+.news-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== IMAGE ===== */
+.news-img {
+    width: 100%;
+    height: 170px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ===== CONTENT ===== */
+.news-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.news-content h4 {
+    font-size: 16px;
+    line-height: 1.4;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-content p {
+    font-size: 14px;
+    color: #555;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-content small {
+    margin-top: auto;
+    color: #999;
+    font-size: 12px;
+}
+
+/* ===== TAG ===== */
+.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tag.Java {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.tag.SQL {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.tag.Tips {
+    background: #fff3e0;
+    color: #ef6c00;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 500px;
+    max-width: 90%;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1024px) {
+    .slider {
+        height: 200px;
+    }
+}
+
+@media (max-width:600px) {
+
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .slider {
+        height: 180px;
+    }
+}
+
+@media (max-width:400px) {
+    .slider {
+        height: 150px;
+    }
+}
